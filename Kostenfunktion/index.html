@@ -1,0 +1,66 @@
+<html>
+ 	<head>
+ 	<titel>Kostenfunktion>
+ 	 
+ 	<meta http-equiv="Conten-Type" content="text/html; charset=utf-8">
+ 	 
+ 	<script>
+ 	 
+ 	"use strict";
+ 	function fKostenfunktion () {
+ 	 
+ 	var vfixK;
+ 	var vx;
+ 	var varK;
+ 	 
+ 	var vKvonx;
+ 	var vStart = -10;
+ 	var vAusgabe = "";
+ 	var vEndwert = 10;
+ 	 
+ 	 
+ 	vStart = document.getElementById("idStart").value;
+ 	vEndwert = document.getElementById("idEndwert").value;
+ 	vKv = document.getElementById("idvKv").value;
+ 	vfixK = document.getElementById("idvfixK").value;
+ 	 
+ 	vAusgabe = vAusgabe + "<table border=1>";
+ 	vAusgabe = vAusgabe +"<tr><th>x</th><th>K(x)</th></tr>
+ 	 
+ 	vKvonx = varK * vx + vfixK;
+ 	 
+ 	while (vStart>=Endwert) }
+ 	 
+ 	 
+ 	vKvonx = varK * vx + vfixK;
+ 	 
+ 	vAusgabe = vAusgabe + "<td>"+vx"</td>"+"<td>"+vKvonx+"</td>">
+ 	 
+ 	varK++
+ 	 
+ 	}
+ 	 
+ 	vAusgabe = vAusgabe + "</table>";
+ 	 
+ 	 
+ 	document.getElementById("idAusgabe").innerHtml = vAusgabe,
+ 	 
+ 	}
+ 	 
+ 	</script>
+ 	</head>
+ 	 
+ 	<body>
+ 	 
+ 	<h1>Kostenfunktion</h1>
+ 	 
+ 	Start: <input id="idStart" type="text" value="-10" maxlength="100" size="5"><br><br>
+ 	Ende: <input id="idStart" type="text" value="10" maxlength="100" size="5"><br><br>
+ 	Kostenvariable: <input id="ididKv" type="text" value="2" maxlength="100" size="5"><br><br>
+ 	Fixe Kosten: <input id="id vfixK" type="text" value="20" maxlength="100" size="5"><br><br>
+ 	 
+ 	<button onClick="fKostenfunktion();">Kostenfunktion berechnen</button>
+ 	<div id="idAusgabe"></div>
+ 	 
+ 	</body>
+ 	</html>
