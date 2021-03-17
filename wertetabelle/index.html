@@ -1,0 +1,60 @@
+<html lang="de-de">
+	<head>
+		<title>wertetabelle</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>table { text-align: right; }</style>
+        <script>
+            "use strict";
+
+            function fwertetabelle() {
+                function get(id) { return Number.parseInt(document.getElementById(id).value); }
+
+                var zinsen = get("idZinsen");
+                var kapital = get("idKapital");
+                var dauer = get("iddauer");
+
+                var ausgabe = '<table border=1>' +
+                            '<tr>' +
+                            '<th>Jahr</th>' + 
+                            '<th>Kapital am 1.1</th>' + 
+                            '<th>Zins am 31.12</th>' + 
+                            '<th>Kapital am 31.12</th>' +
+                            '</tr>';
+
+                    for (var x = 0; x <= dauer; x++) { 
+                    
+                    var zinsenende = kapital * (zinsen / 100);
+                    var kapitalende = kapital + zinsenende;
+                   
+                    ausgabe = ausgabe + 
+                        '<tr style="background-color:lightgreen">' + 
+                        '<td>' + x + '</td>' + 
+                        '<td>' + kapital.toFixed(2) + '</td>' + 
+                        '<td>' + zinsenende.toFixed(2) + '</td>' + 
+                        '<td>' + kapitalende.toFixed(2) + '</td>' + 
+                        '</tr>';
+
+                        kapital = kapitalende;
+
+                            }
+                            ausgabe = ausgabe + '</table>';
+                            document.getElementById('idAusgabe').innerHTML = ausgabe;
+                            }
+        </script>
+     </head>
+	        <body>
+                    <h1>wertetabelle</h1>
+
+                    <p>Zinsen:</p><input id="idZinsen" type="number" value="2">
+                    <p>Kapital:</p><input id="idKapital" type="number" value="1000">
+                   <p>Dauer in Jahren:</p><input id="iddauer" type="number" value="5">
+                <br />
+                <br />
+                    <button onClick="fwertetabelle()">Berechnen</button>
+
+                <br />
+                
+                <div id="idAusgabe"></div>
+                    
+            </body>
+</html>
